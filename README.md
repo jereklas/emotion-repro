@@ -16,5 +16,5 @@ With 4k+ stylesheets, as you add more components (i.e. increase the number of bu
 can see render times drastically increase per component added.
 
 From observations it's almost like render times correlate to `#_of_stylesheets * #_of_components`.
-So 4000 _ 1(button) is some manageable render time, lets say 1 second. When you increase to 20
-buttons it then becomes 4000 _ 20, and render times jump substantially into like the ~20 second range.
+So 4000 X 1(button) is some manageable render time, lets say 1 second. When you increase to 20
+buttons it then becomes 4000 X 20, and render times jump substantially into like the ~20 second range.
