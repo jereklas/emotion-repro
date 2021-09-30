@@ -1,4 +1,4 @@
-# Emotion Performance Repro
+# Emotion Performance Reproduction
 
 This is a toy example showing the performance issue on development builds. This will add 316
 stylesheets on initial render, and then toggling the theme increases it to 644 stylesheets. When
