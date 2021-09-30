@@ -6,6 +6,18 @@ analyzing the render time using the browsers profiler, a development build takes
 switch between themes than the release build equivalent (where there is only 1 stylesheet added to
 the head element).
 
+NOTE: This looks like it might be due to a naive MUI stylesheet application? You'll notice that each
+stylesheet is relating to a MUI rule. It appears to roughly double on theme toggle.
+
+Thoughts:
+
+1. perhaps MUI could find some way for their global theming (i.e. theming via `createTheme`) to
+   result in a single stylesheet?
+2. Using 2 theme objects is doubling the stylesheets in the DOM on theme toggle. Can we achieve theme
+   change with a single theme object (this would reduce number of stylesheets in dev builds by half)?
+3. Can emotion have development builds act like the release builds and condense into singular
+   stylesheets?
+
 In real world applications where there are multiple dynamic styles, and multiple component types
 being rendered, the number of stylesheets being appended to the head jumps into the 4k+ range in
 development builds. Dev builds take 20+ seconds to toggle a theme, and loading new pages takes
